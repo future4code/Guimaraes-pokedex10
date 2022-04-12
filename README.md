@@ -1,11 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Robson Rodrigues Ribeiro
+- Wellington Marcelino Sotero
+- Miguel Tocchetto Pereira
 
-Link do Surge: www.link.com.br
+Link do Surge: "não tem ainda"
 
 O que funciona:
 - Item 1
