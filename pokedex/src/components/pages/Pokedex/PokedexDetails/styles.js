@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import backgroudPokemon from '../../../assets/background4.png'
 
+
 export const ContainerPokedexDetails = styled.div`
     width: 100vw;
     height: 100vh;
@@ -49,8 +50,16 @@ export const Footer = styled.footer`
     height: 141px;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+
+    img{
+        display: flex;
+        width: 300px;
+        margin-top: -80px;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 1500px;
+    }
 `;
 export const Header = styled.div`
     grid-area: HE;

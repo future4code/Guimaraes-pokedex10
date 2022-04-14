@@ -1,6 +1,14 @@
 import React from "react";
 
 import { ButtonTextFieldLabel } from "../../../shared/ButtonTextField";
+import imgFooter18 from  '../../../assets/background18.png'
+import imgFooter17 from  '../../../assets/background17.png'
+import imgFooter16 from  '../../../assets/background16.png'
+import imgFooter15 from  '../../../assets/background15.png'
+import imgFooter14 from  '../../../assets/background14.png'
+import imgFooter13 from  '../../../assets/background13.png'
+import imgFooter12 from  '../../../assets/background12.png'
+import imgFooter11 from  '../../../assets/background11.png'
 
 import  * as S  from "./styles";
 
@@ -79,7 +87,15 @@ const PokedexDetails = () => {
             </S.Move>
 
             <S.Footer>
-                Projeto Labenu Pokedex
+            
+                <img src={imgFooter18} alt={'background'} />
+                {/* <img src={imgFooter17} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter16} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter15} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter14} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter13} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter12} alt={'background'} style={{ width: '200px', height: '140px' }}/>
+                <img src={imgFooter11} alt={'background'} style={{ width: '200px', height: '140px' }}/> */}
             </S.Footer>
 
         </S.Container>
