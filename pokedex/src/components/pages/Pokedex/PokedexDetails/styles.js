@@ -18,7 +18,7 @@ export const Container = styled.div`
     display: grid;
     
     grid-template-columns: 50px auto 500px auto 50px;
-    grid-template-rows: 80px 150px 150px 150px 150px 100%;
+    grid-template-rows: 80px 150px 150px 150px 150px auto;
 
     grid-row-gap: 1.75em;
     grid-column-gap: 1.5em;
@@ -38,9 +38,20 @@ export const Container = styled.div`
     '. FT ST MV .'
     '. BA ST MV .'
     '. BA ST MV .'
+    'FO FO FO FO FO'
     ;
 `;
 
+export const Footer = styled.footer`
+    grid-area: FO;
+    background-color: black;
+    width: 100%;
+    height: 141px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 export const Header = styled.div`
     grid-area: HE;
     display: flex;

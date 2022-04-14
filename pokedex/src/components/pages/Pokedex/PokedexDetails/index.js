@@ -78,6 +78,10 @@ const PokedexDetails = () => {
                 Moves
             </S.Move>
 
+            <S.Footer>
+                Projeto Labenu Pokedex
+            </S.Footer>
+
         </S.Container>
     </S.ContainerPokedexDetails>)
 }
