@@ -50,6 +50,10 @@ export const Header = styled.div`
     /* border: 1px solid black; */
     background-color: black;
 
+    :hover{
+        color: white;
+    }
+
 
     .header-left{
         display: flex;
