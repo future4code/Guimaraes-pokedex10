@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "../pages/Home/Home";
 import Pokedex from "../pages/Pokedex/Pokedex"
-import PokedexDetails from "../pages/Pokedex/PokedexDetails/PokedexDetails";
+import PokemonDetails from "../pages/Pokedex/PokemonDetails/PokemonDetails";
 import Error from "../pages/Error/Error"
 
 const Routers = () => {
@@ -9,7 +9,7 @@ const Routers = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pokedex" element={<Pokedex />} />
-            <Route path="/pokedex/details" element={<PokedexDetails />} />
+            <Route path="/pokedex/details" element={<PokemonDetails />} />
             <Route path="*" element={<Error />} />
         </Routes>
     </BrowserRouter>)

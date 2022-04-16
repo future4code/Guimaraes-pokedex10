@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../../shared/Header/Header"
 import styled from "styled-components"
 
-const PokedexDetails = () => {
+const PokemonDetails = () => {
 
     const ContainerHeader = styled.div`
         display: flex;
@@ -17,4 +17,4 @@ const PokedexDetails = () => {
         </ContainerHeader>
     )
 }
-export default PokedexDetails;
+export default PokemonDetails;
