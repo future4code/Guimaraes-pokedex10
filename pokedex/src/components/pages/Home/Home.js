@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {goToPokedex, goToPokemonDetails} from '../../constants/Navigation'
 import Button from "../../shared/Button/Button";
 import Header from "../../shared/Header/Header";
 import styled from "styled-components"
@@ -13,10 +14,13 @@ justify-content: space-around;
 `
 
 const Home = () => {
+    const navigate = useNavigate();
 
     return(
         <ContainerHeader>
-            <Header />
+            <p>Logo</p>
+            <h1>PokeLab</h1>
+            <button onClick={()=>{goToPokedex(navigate)}}> Pokedex </button>
         </ContainerHeader>)
 }
 export default Home;
