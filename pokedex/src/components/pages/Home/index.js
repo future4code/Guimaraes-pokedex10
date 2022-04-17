@@ -19,7 +19,7 @@ const Home = () => {
          
         }}
       >
-        Destaques dos Pokémons
+        Destaques dos Pokemons
       </button>
     </div>
   );
