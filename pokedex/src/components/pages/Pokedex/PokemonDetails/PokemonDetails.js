@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ButtonTextFieldLabel } from "../../../shared/ButtonTextField";
+import { goBack } from "../../../Navigation/Navigation";
 import imgFooter18 from  '../../../assets/background18.png'
 import imgFooter17 from  '../../../assets/background17.png'
 import imgFooter16 from  '../../../assets/background16.png'
@@ -11,8 +12,11 @@ import imgFooter12 from  '../../../assets/background12.png'
 import imgFooter11 from  '../../../assets/background11.png'
 
 import  * as S  from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const PokedexDetails = () => {
+    const navigate = useNavigate()
+    
     return(<S.ContainerPokedexDetails>
         <S.Container>
             {/* <S.Left>
@@ -35,6 +39,7 @@ const PokedexDetails = () => {
                             height={'30px'}
                             radius={'30px'}
                             backgroundColor={'#1db954'}
+                            onClick={()=>{goBack(navigate)}}
                         />
                     </div>
                 </div>
@@ -46,7 +51,7 @@ const PokedexDetails = () => {
                 <div  className="header-right">
                     <div>
                         <ButtonTextFieldLabel 
-                            label={'Adiciobar/Remover da pokedex'} 
+                            label={'Adicionar/Remover da pokedex'} 
                             height={'30px'}
                             width={'210px'}
                             radius={'30px'}
