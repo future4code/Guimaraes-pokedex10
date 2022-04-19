@@ -6,7 +6,8 @@ import Mock from "../mock";
 import ErrorPage from "../pages/Error/ErrorPage";
 
 const Routers = () => {
-    return(<BrowserRouter>
+    return(
+    <BrowserRouter>
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pokemon/details" element={<PokemonDetails />} />
