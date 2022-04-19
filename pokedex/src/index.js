@@ -4,11 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Routes from './components/routers/Routes'
+import GlobalState from './components/global/GlobalState';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: Open-Sans, Helvetica, Sans-Serif;
+  }
+`;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Routes />
+    <GlobalState>
+      <GlobalStyle />
+      <Routes />
+    </GlobalState>
   </React.StrictMode>
 );
 
