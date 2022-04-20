@@ -22,7 +22,7 @@ const ContainerGeral = styled.div`
 const Container = styled.div`
     display: grid;
     
-    grid-template-columns: 350px 350px 350px 350px 350px;
+    grid-template-columns: 350px 350px 350px 350px;
     grid-template-rows:  auto; //350px 350px 350px 350px 350px 350px;
     /* grid-gap: 10px; */
     /* border: 1px solid red; */
@@ -71,23 +71,28 @@ const Home = () => {
     const navigate = useNavigate();
 
     const { states, setters, requests } = useContext(GlobalStateContext);
-    const { pokemon, isLoading, error } = states;
-    const { getPokemon } = requests; 
+    const { pokemon, isLoading, error, icon, pokemonDetails } = states;
+    const { getPokemon, getIcon } = requests; 
 
     useEffect(()=>{
         getPokemon();
     },[])
+
+
+    // console.log("pokemon", pokemon);
+    console.log("pokemonDetails", pokemonDetails);
 
     return(
     <ContainerGeral>
         <Header />
 
         <Container>
-            {error? 'Ocorreu um erro' : isLoading? 'Carregando' : pokemon.map((pk, index)=>{
+            {error? 'Ocorreu um erro' : isLoading? 'Carregando' : pokemonDetails[0]?.map((pk, index)=>{
                 return(
                     <CardPokemon 
-                    key={index}
+                        key={index}
                         title={pk.name}
+                        icon={pk.urlIcon}
                     />
             )})}
         </Container>

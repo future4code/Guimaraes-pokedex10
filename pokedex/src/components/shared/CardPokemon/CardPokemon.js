@@ -15,12 +15,23 @@ const ContainerCard = styled.div`
 
     .card-img{
         display: flex;
-        border: 1px solid white;
+        /* border: 1px solid white; */
+        flex-direction: column;
         height: 100%;
         width: 100%;
+  
         align-items: center;
         justify-content: center;
         color: white;
+
+        img{
+            width: 70%;
+            height: 70%;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            /* border: 1px solid red; */
+        }
     }
 
     .card-footer{
@@ -32,13 +43,16 @@ const ContainerCard = styled.div`
 
 `
 
-const CardPokemon = ({ title }) => {
+const CardPokemon = ({ title, icon }) => {
     const navigate = useNavigate();
 
     return(
         <ContainerCard>
-            <div  className="card-img">
-                <h1>{title}</h1>
+            <div className="card-img">
+                <div className="card-title">
+                    <h1>{title}</h1>
+                </div>
+                <img src={`${icon}`} />
             </div>
            <div className="card-footer">
                 <div>
