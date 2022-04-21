@@ -43,7 +43,7 @@ const ContainerCard = styled.div`
 
 `
 
-const CardPokemon = ({ title, icon }) => {
+const CardPokemon = ({ title, icon, select }) => {
     const navigate = useNavigate();
 
     return(
