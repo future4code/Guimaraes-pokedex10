@@ -1,38 +1,28 @@
 import React from "react";
 import { Container } from "./styles";
 import { ButtonTextFieldLabel } from "../ButtonTextField";
-import {goToPokedex, goToPokemonDetails, goBack} from '../../Navigation/Navigation'
+import {goToPokedex, goBack, goToHomePage} from '../../Navigation/Navigation'
 import { useNavigate } from "react-router-dom";
 
 
-const Header = () => {
+const Header = ({title, page, hidden=false}) => {
     const navigate = useNavigate();
 
     return(
     <Container className="header-container">
-        <div className="header-left">
-            <ButtonTextFieldLabel 
-                label={'Voltar'} 
-                height={'50px'}
-                radius={'30px'}
-                width={'210px'}
-                backgroundColor={'#1db954'}
-                onClick={()=>{goBack(navigate)}}
-            />
-        </div>
         
         <div className="header-center">
-            <h1>Pokemons</h1>
+            <h1>{page? page : ""}</h1>
         </div>
         
         <div className="header-right">
         <ButtonTextFieldLabel 
-            label={'Pokedex'} 
+            label={title? title: ""}
             height={'50px'}
             width={'210px'}
             radius={'30px'}
             backgroundColor={'#1db954'}
-            onClick={()=>{goToPokedex(navigate)}}
+            onClick={()=>{ page === "Pokemon"? goToPokedex(navigate) : goBack(navigate) }}
         />
         </div>
     </Container>)

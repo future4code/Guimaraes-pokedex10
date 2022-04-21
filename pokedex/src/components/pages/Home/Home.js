@@ -29,43 +29,7 @@ const Container = styled.div`
 
     justify-content: space-around;
     align-items: center;
-`;
-
-
-// const Header = styled.div`
-//     grid-area: HE;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     color: #1db954;
-//     /* border: 1px solid black; */
-//     background-color: black;
-
-//     // :hover{
-//     //     color: white;
-//     // }
-
-
-//     .header-left{
-//         display: flex;
-//         justify-content: start;
-//         align-items: center;
-//         /* border: 1px solid black; */
-//         width: 250px;
-//         height: 100%;
-//         margin-left: 50px;
-//     }
-
-//     .header-right{
-//         display: flex;
-//         justify-content: end;
-//         align-items: center;
-//         /* border: 1px solid black; */
-//         width: 250px;
-//         height: 100%;
-//         margin-right: 50px;
-//     }
-// `;
+    `
 
 const Home = () => {
     const navigate = useNavigate();
@@ -84,7 +48,7 @@ const Home = () => {
 
     return(
     <ContainerGeral>
-        <Header />
+        <Header page="Pokemon" title="Pokedex"/>
 
         <Container>
             {error? 'Ocorreu um erro' : isLoading? 'Carregando' : pokemonDetails[0]?.map((pk, index)=>{
