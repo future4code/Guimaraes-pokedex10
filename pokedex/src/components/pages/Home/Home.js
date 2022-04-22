@@ -32,14 +32,14 @@ const Container = styled.div`
     `
 
 const Home = () => {
-    const navigate = useNavigate();
-
     const { states, setters, requests } = useContext(GlobalStateContext);
     const { pokemon, isLoading, error, icon, pokemonDetails } = states;
-    const { getPokemon, getIcon } = requests; 
+    const { getPokemon } = requests; 
 
     useEffect(()=>{
-        getPokemon();
+        if(!pokemonDetails.length){
+            getPokemon();
+        }    
     },[])
 
 
@@ -57,6 +57,7 @@ const Home = () => {
                         key={index}
                         title={pk.name}
                         icon={pk.urlIcon}
+                        idPokemon={pk.id}
                     />
             )})}
         </Container>
