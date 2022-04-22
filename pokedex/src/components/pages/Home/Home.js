@@ -63,4 +63,4 @@ const Home = () => {
     </ContainerGeral>
     )
 }
-export default Home; 
+export default Home;
