@@ -26,12 +26,20 @@ const GlobalState = (props) => {
                     .then((res)=>{
                         const pokemonData = pokemonDetails;
                         
+                        
                         const data = {
+                            id:  res.data.id,
                             name: pk.name,
                             url: pk.url,
-                            urlIcon: res.data.sprites.other.dream_world.front_default
+                            urlIcon: res.data.sprites.other.dream_world.front_default,
+                            urlFront: res.data.sprites.other.dream_world.front_default,
+                            urlBack: res.data.sprites.versions['generation-iv'].platinum.back_default,
+                            moves: res.data.moves,
+                            types: res.data.types
+
                         }                        
 
+                        // console.log("Data: ", data)
                         if(!pokemonDetails.some(pokem => pokem.name === data.name)){
                             pokemonData.push(data);
                             setPokemonDetails([pokemonData]);
