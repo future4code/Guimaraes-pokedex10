@@ -18,7 +18,7 @@ export const ContainerPokedexDetails = styled.div`
 export const Container = styled.div`
     display: grid;
     
-    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-columns: 50px auto 700px auto 50px;
     grid-template-rows: 80px 150px 150px 150px 150px auto;
 
     grid-row-gap: 1.75em;
@@ -94,6 +94,10 @@ export const Header = styled.div`
         height: 100%;
         margin-right: 50px;
     }
+
+    .header-center{
+        color: white;
+    }
 `;
 
 export const Front = styled.div`
@@ -144,13 +148,33 @@ export const Type = styled.div`
     align-items: center;
     border: 1px solid white;
     color: white;
+
+    .types-name{
+        display: flex;
+        margin: 5px;
+    }
+    
 `;
 
 export const Move = styled.div`
     grid-area: MV;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     border: 1px solid white;
     color: white;
+
+    label{
+        margin: 20px 0;
+        color: black;
+        font-weight: bold;
+    }
+
+    .moves-name{
+        display: flex;
+        flex-direction: column;
+        margin: 5px auto;
+    }
+
 `;

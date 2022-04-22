@@ -43,7 +43,7 @@ const ContainerCard = styled.div`
 
 `
 
-const CardPokemon = ({ title, icon, select }) => {
+const CardPokemon = ({ title, icon, idPokemon }) => {
     const navigate = useNavigate();
 
     return(
@@ -62,7 +62,7 @@ const CardPokemon = ({ title, icon, select }) => {
                         width={'130px'}
                         radius={'30px'}
                         backgroundColor={'#1db954'}
-                        onClick={()=>{goToPokemonDetails(navigate)}}
+                        onClick={()=>{goToPokemonDetails(navigate, idPokemon)}}
                     />
                 </div>
                 <div>
@@ -72,7 +72,7 @@ const CardPokemon = ({ title, icon, select }) => {
                         width={'130px'}
                         radius={'30px'}
                         backgroundColor={'#1db954'}
-                        onClick={()=>{goToPokedex(navigate)}}
+                        onClick={()=>{ goToPokedex(navigate) }}
                     />
                 </div>
            </div>

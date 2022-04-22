@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { ButtonTextFieldLabel } from "../../../shared/ButtonTextField";
 import { goBack } from "../../../Navigation/Navigation";
@@ -12,25 +12,26 @@ import imgFooter12 from  '../../../assets/background12.png'
 import imgFooter11 from  '../../../assets/background11.png'
 
 import  * as S  from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import GlobalStateContext from "../../../global/GlobalStateContext";
 
 const PokedexDetails = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [pokemonSkill, setPokemonSkill] = useState([]);
     
+    const { states }  = useContext(GlobalStateContext);
+    const { pokemonDetails } = states;
+    let { id } = useParams();
+    
+
+    useEffect(()=>{
+        setPokemonSkill(pokemonDetails[0].filter( pk => pk.id === parseInt(id)));
+    },[])
+   
+    console.log("skill",  pokemonSkill);
+
     return(<S.ContainerPokedexDetails>
         <S.Container>
-            {/* <S.Left>
-                header Btn voltar
-            </S.Left>
-
-            <S.Center>
-                heder title
-            </S.Center>
-
-            <S.Right>
-                Adicionar/Remover da pokedex
-            </S.Right> */}
-
             <S.Header>
                 <div className="header-left">
                     <div>
@@ -45,7 +46,7 @@ const PokedexDetails = () => {
                 </div>
 
                 <div className="header-center">
-                    <div>Nome do Pokemon</div>
+                    <div>{pokemonSkill.name}</div>
                 </div>
 
                 <div  className="header-right">
@@ -62,45 +63,52 @@ const PokedexDetails = () => {
                 
             </S.Header>
 
-            <S.Front>
-                Imagem Frontal
-            </S.Front>
+            { pokemonSkill.map((pk, index)=>{
+                return(<>
+                    <S.Front key={index}>
+                     <img  src={pk.urlFront}/>
+                    </S.Front>
 
-            <S.Back>
-                Back
-            </S.Back>
+                    <S.Back>
+                        <img  src={pk.urlBack}/>
+                    </S.Back>
 
-            <S.Status>
-                <h2>Status</h2>
-                <div className="status-form">
-                    <label>HP: 46</label>
-                    <label>attack: 39</label>
-                    <label>defense: 52</label>
-                    <label>special-attack: 43</label>
-                    <label>special-defense: 54</label>
-                    <label>speed: 54</label>
-                </div>
-                
-            </S.Status>
+                    <S.Status>
+                    <h2>Status</h2>
 
-            <S.Type>
-                Type
-            </S.Type>
+                    <div className="status-form">
+                        <label>HP: 46</label>
+                        <label>attack: 39</label>
+                        <label>defense: 52</label>
+                        <label>special-attack: 43</label>
+                        <label>special-defense: 54</label>
+                        <label>speed: 54</label>
+                    </div>
+                    
+                </S.Status>
 
-            <S.Move>
-                Moves
-            </S.Move>
+                <S.Type>
+                    { pk.types.map((t,index) =>{
+                        return(<div className="types-name">
+                                <strong key={index}>{t.type.name}</strong>
+                            </div>)
+                    })}
+                </S.Type>
 
+                <S.Move>
+                    <label>Principais ataques</label>
+                    {pk.moves.map((mv, index)=>{
+                        return(<div className="moves-name">
+                        <strong key={index}>{mv.move.name }</strong>
+                    </div>)
+                    })}
+                </S.Move>
+
+
+                </>)
+            })}
             <S.Footer>
-            
                 <img src={imgFooter18} alt={'background'} />
-                {/* <img src={imgFooter17} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter16} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter15} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter14} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter13} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter12} alt={'background'} style={{ width: '200px', height: '140px' }}/>
-                <img src={imgFooter11} alt={'background'} style={{ width: '200px', height: '140px' }}/> */}
             </S.Footer>
 
         </S.Container>
